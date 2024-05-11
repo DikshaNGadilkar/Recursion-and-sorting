@@ -1,0 +1,16 @@
+ip=1,0,1,1,0
+op=2
+class Solution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int j=-1;
+        int max=0;
+        int i=0;
+       for(i=0;i<nums.length;i++){
+        if(nums[i]==0){
+            max=Math.max(max,i-j-1);
+            j=i;
+        }
+       }
+       return Math.max(max,i-j-1) ;
+    }
+}
